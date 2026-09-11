@@ -1,0 +1,184 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Truculenta', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Monokrom murni — putih/abu netral + tinta hitam. Tanpa nada hangat, tanpa aksen kromatik. */
+  --color-canvas: #FAFAFA;
+  --color-ink: #181818;
+  --color-ink-deep: #0A0A0A;
+
+  /* Skala abu netral (menggantikan stone hangat — pendamping hitam putih) */
+  --color-stone-50: #FAFAFA;
+  --color-stone-100: #F4F4F4;
+  --color-stone-200: #E4E4E4;
+  --color-stone-300: #D2D2D2;
+  --color-stone-400: #A6A6A6;
+  --color-stone-500: #757575;
+  --color-stone-600: #555555;
+  --color-stone-700: #3D3D3D;
+  --color-stone-800: #262626;
+  --color-stone-900: #161616;
+
+  /* Radius sistem: sheet (0) untuk permukaan besar, tick (2px) untuk kontrol kecil */
+  --radius-tick: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-canvas font-sans text-ink antialiased;
+}
+
+::selection {
+  @apply bg-ink text-white;
+}
+
+/* Section index — "spec" tag dengan rule, konsisten sebagai perangkat editorial-arsip */
+@utility spec {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Offset archival frame with corner registration ticks around imagery */
+@utility frame-archival {
+  position: relative;
+  isolation: isolate;
+}
+
+@utility frame-tick {
+  position: absolute;
+  z-index: 1;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-color: var(--color-ink);
+  border-style: solid;
+  border-width: 0;
+}
+
+/* Tombol solid — formal: sudut siku, inkas hitam, hover menginversi (tanpa angkat, tanpa pil) */
+@utility btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border: 1px solid var(--color-ink);
+  background-color: var(--color-ink);
+  color: #ffffff;
+  font-weight: 600;
+  transition: background-color 200ms ease, color 200ms ease;
+
+  &:hover {
+    background-color: #ffffff;
+    color: var(--color-ink);
+  }
+}
+
+/* Tombol outline — formal: garis rambut, hover terisi tinta */
+@utility btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--color-ink);
+  background-color: transparent;
+  color: var(--color-ink);
+  font-weight: 600;
+  transition: background-color 200ms ease, color 200ms ease;
+
+  &:hover {
+    background-color: var(--color-ink);
+    color: #ffffff;
+  }
+}
+
+/* Preflight Tailwind v4 — kembalikan cursor pointer pada kontrol aktif */
+button:not(:disabled),
+[role='button']:not(:disabled) {
+  cursor: pointer;
+}
+
+/* Indikator fokus keyboard yang terlihat (WCAG 2.4.7 & 2.4.11) */
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
+/* Ambient shadow — hanya untuk elemen melayang (badge, kartu mengambang), bukan kartu biasa */
+@utility shadow-ambient {
+  box-shadow: 0 1px 2px rgb(24 24 24 / 0.05), 0 14px 34px -14px rgb(24 24 24 / 0.18);
+}
+
+@utility shadow-ambient-lg {
+  box-shadow: 0 2px 4px rgb(24 24 24 / 0.06), 0 28px 56px -20px rgb(24 24 24 / 0.22);
+}
+
+/* Scrollbar bernuansa abu — menyatu dengan palet monokrom (WebKit & Firefox) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--color-stone-400) 40%, transparent);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--color-stone-400) 70%, transparent);
+}
+
+@supports (scrollbar-color: auto) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-stone-400) 40%, transparent) transparent;
+  }
+}
+
+/* Hormati preferensi gerakan pengguna (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Transisi panel mobile */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+h1 {
+  font-weight: 500;
+}
