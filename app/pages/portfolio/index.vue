@@ -1,7 +1,43 @@
 <script setup lang="ts">
 import { projects } from '~/utils/data'
+import { SITE } from '~/utils/site'
+import { buildBreadcrumbSchema } from '~/utils/seo'
 
-const categories = ['Semua', 'Kantor & Perkantoran', 'Logistik', 'Rumah', 'Pendidikan']
+const pageTitle = 'Portofolio Proyek — CV Arsinata Cipta Saderma'
+const pageDescription
+  = 'Dokumentasi hasil pengerjaan proyek konstruksi, renovasi interior/MEP, dan custom furniture di Yogyakarta & sekitarnya oleh Arsinata.'
+
+useSeoMeta({
+  title: pageTitle,
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: `${SITE.url}/portfolio`,
+  ogImage: `${SITE.url}/og-image.jpg`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: `${SITE.url}/og-image.jpg`
+})
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Beranda', path: '/' },
+  { name: 'Portofolio', path: '/portfolio' }
+])
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `${SITE.url}/portfolio` }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(breadcrumbSchema)
+    }
+  ]
+})
+
+const categories = ['Semua', 'Kantor & BUMN', 'Pendidikan', 'Fasilitas Publik', 'Residensial', 'Ritel & Komersial']
 const active = ref('Semua')
 
 const filtered = computed(() =>
@@ -38,18 +74,12 @@ const filtered = computed(() =>
         <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <ScrollReveal
             v-for="(p, i) in filtered"
-            :key="p.title"
+            :key="p.slug"
             :delay="(i % 3) * 80"
           >
             <ProjectCard :project="p" />
           </ScrollReveal>
         </div>
-
-        <ScrollReveal>
-          <p class="mt-10 text-center text-xs text-ink/60">
-            * Dokumentasi foto proyek asli sedang disiapkan dan akan diperbarui di halaman ini.
-          </p>
-        </ScrollReveal>
       </div>
     </section>
 

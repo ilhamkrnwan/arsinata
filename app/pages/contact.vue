@@ -1,5 +1,40 @@
 <script setup lang="ts">
 import { SITE, waLink, WA_DEFAULT_TEXT } from '~/utils/site'
+import { buildBreadcrumbSchema } from '~/utils/seo'
+
+const pageTitle = 'Kontak & Konsultasi — CV Arsinata Cipta Saderma'
+const pageDescription
+  = 'Hubungi tim teknis Arsinata: fast response via WhatsApp (+62 877-3880-8008), email resmi, dan alamat kantor di Plosokuning, Sleman, Yogyakarta.'
+
+useSeoMeta({
+  title: pageTitle,
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: `${SITE.url}/contact`,
+  ogImage: `${SITE.url}/og-image.jpg`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: `${SITE.url}/og-image.jpg`
+})
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Beranda', path: '/' },
+  { name: 'Kontak', path: '/contact' }
+])
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `${SITE.url}/contact` }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(breadcrumbSchema)
+    }
+  ]
+})
 
 const cards = [
   {

@@ -7,7 +7,10 @@ defineProps<{
 </script>
 
 <template>
-  <article class="group flex h-full flex-col overflow-hidden border border-ink/10 bg-canvas transition duration-300 hover:border-stone-300">
+  <NuxtLink
+    :to="`/portfolio/${project.slug}`"
+    class="group flex h-full flex-col overflow-hidden border border-ink/10 bg-canvas transition duration-300 hover:border-stone-400 hover:shadow-ambient"
+  >
     <!-- Visual proyek -->
     <div class="relative overflow-hidden">
       <img
@@ -40,7 +43,7 @@ defineProps<{
         />
         {{ project.location }}
       </p>
-      <h3 class="mt-3 font-display text-2xl leading-tight text-ink">
+      <h3 class="mt-3 font-display text-2xl leading-tight text-ink transition-colors group-hover:text-stone-800">
         {{ project.title }}
       </h3>
       <p class="mt-3 flex-1 text-base leading-relaxed text-ink/70">
@@ -55,6 +58,17 @@ defineProps<{
           {{ t }}
         </span>
       </div>
+
+      <!-- Action footer link -->
+      <div class="mt-6 flex items-center justify-between border-t border-ink/8 pt-4 text-xs font-bold uppercase tracking-wider text-ink/70 transition-colors group-hover:text-ink">
+        <span>Lihat Detail Proyek</span>
+        <span class="grid size-7 place-items-center rounded-tick bg-stone-100 text-stone-700 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-ink group-hover:text-white">
+          <UIcon
+            name="i-lucide-arrow-right"
+            class="size-3.5"
+          />
+        </span>
+      </div>
     </div>
-  </article>
+  </NuxtLink>
 </template>

@@ -1,32 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Halaman Utama -->
   <url>
     <loc>https://arsinata.com/</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://arsinata.com/services</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://arsinata.com/portfolio</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/about</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arsinata.com/about</loc>
-    <lastmod>2026-08-19</lastmod>
+    <loc>https://arsinata.com/contact</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Detail Portofolio Proyek (14 Proyek) -->
+  <url>
+    <loc>https://arsinata.com/portfolio/balai-yasa-ruang-evp</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://arsinata.com/contact</loc>
-    <lastmod>2026-08-19</lastmod>
+    <loc>https://arsinata.com/portfolio/balai-yasa-ruang-manager</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/balai-yasa-ruang-asmen</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/balai-yasa-ruang-rapat</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/balai-yasa-perpustakaan</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/uin-ruang-kelas</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/sma-muh-4-yk</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/smk-muh-3-yk</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/unisa-backdrop</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/puskesmas-2-tempel</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/ruang-praktik-dr-geta</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/kitchen-set-pak-topek</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/kitchen-set-bu-bikan</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arsinata.com/portfolio/baby-spa</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

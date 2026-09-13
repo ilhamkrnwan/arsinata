@@ -1,4 +1,40 @@
 <script setup lang="ts">
+import { SITE } from '~/utils/site'
+import { buildBreadcrumbSchema } from '~/utils/seo'
+
+const pageTitle = 'Tentang Kami — CV Arsinata Cipta Saderma'
+const pageDescription
+  = 'Profil CV Arsinata Cipta Saderma: nilai integritas, standar mutu bertahap, protokol K3 proaktif, dan komitmen ESG jasa konstruksi di Sleman, Yogyakarta.'
+
+useSeoMeta({
+  title: pageTitle,
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: `${SITE.url}/about`,
+  ogImage: `${SITE.url}/og-image.jpg`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: `${SITE.url}/og-image.jpg`
+})
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Beranda', path: '/' },
+  { name: 'Tentang Kami', path: '/about' }
+])
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `${SITE.url}/about` }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(breadcrumbSchema)
+    }
+  ]
+})
 const values = [
   { icon: 'i-lucide-scale', title: 'Integritas', desc: 'Bekerja jujur, apa adanya, dan menepati komitmen — termasuk soal biaya dan jadwal.' },
   { icon: 'i-lucide-badge-check', title: 'Kualitas', desc: 'Mutu terukur di setiap fase: review material, inspeksi, dan kontrol hasil akhir.' },

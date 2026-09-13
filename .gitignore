@@ -23,8 +23,14 @@ logs
 .env.*
 !.env.example
 
-# AI Agents
+# AI Agents & User Notes
 .agents
 .codex
 .impeccable
 AGENTS.md
+PORTOFOLIO.md
+todo.md
+TODO.md
+
+# Automation & Conversion Scripts
+scripts/

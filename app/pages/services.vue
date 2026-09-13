@@ -1,4 +1,46 @@
 <script setup lang="ts">
+import { faqs } from '~/utils/data'
+import { SITE } from '~/utils/site'
+import { buildFAQSchema, buildBreadcrumbSchema } from '~/utils/seo'
+
+const pageTitle = 'Layanan Konstruksi & Renovasi — CV Arsinata Cipta Saderma'
+const pageDescription
+  = 'Layanan renovasi fasilitas (interior & MEP), konstruksi bangunan baru, dan konsultasi perencanaan (RAB/BoQ) di Yogyakarta & sekitarnya.'
+
+useSeoMeta({
+  title: pageTitle,
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: `${SITE.url}/services`,
+  ogImage: `${SITE.url}/og-image.jpg`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: `${SITE.url}/og-image.jpg`
+})
+
+const faqSchema = buildFAQSchema(faqs)
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Beranda', path: '/' },
+  { name: 'Layanan', path: '/services' }
+])
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `${SITE.url}/services` }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(faqSchema)
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(breadcrumbSchema)
+    }
+  ]
+})
 const services = [
   {
     id: 'renovasi',

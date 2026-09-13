@@ -2,6 +2,7 @@
 import { SITE } from '~/utils/site'
 
 defineProps<{
+  eyebrow?: string
   title?: string
   description?: string
   breadcrumb?: { label: string, to?: string }[]
@@ -41,6 +42,13 @@ defineProps<{
       </nav>
 
       <div class="max-w-3xl">
+        <span
+          v-if="eyebrow"
+          class="spec mb-4 text-ink/60"
+        >
+          <span class="h-px w-8 shrink-0 bg-ink/40" />
+          {{ eyebrow }}
+        </span>
         <h1 class="font-display text-4xl leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
           {{ title }}
         </h1>
